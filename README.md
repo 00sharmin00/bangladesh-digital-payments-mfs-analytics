@@ -1,258 +1,212 @@
-# Bangladesh Fuel Price Overview & Revision Dynamics Analysis (2024–2026)
-
-### A Power BI Case Study | Energy & Economic Analytics
+# Bangladesh Digital Payments & MFS Analytics
+### A SQL and Power BI Case Study | FinTech Analytics
 
 **Role:** Junior Data Analyst  
-**Industry:** Energy / Economic Analytics  
-**Tools:** Microsoft Excel, Power Query, Power BI, DAX  
-**Data Source:** Bangladesh government fuel price publications and official notices  
-**Analysis Period:** June 2024 – October 2026  
-**Dataset Size:** 116 monthly fuel price observations
+**Industry:** FinTech / Digital Financial Services  
+**Tools:** Microsoft Excel, MySQL, Power Query, Power BI, DAX  
+**Dataset Source:** Bangladesh Bank  
+**Analysis Period:** August 2025 – July 2026
 
 ---
 
-## 1. Executive Summary
+## 📌 1. Executive Summary
 
-This project analyzes government-regulated fuel prices in Bangladesh from June 2024 through October 2026, focusing on four major fuel categories: Octane, Petrol, Kerosene, and Diesel.
+This project analyzes Mobile Financial Services (MFS) transaction patterns across Bangladesh from August 2025 through July 2026 using operational statistics from Bangladesh Bank.
 
-Using Microsoft Excel, Power Query, and Power BI, the project examines historical price movements, revision frequency, monthly trends, and before-and-after price changes associated with official price revisions.
+The analysis focuses on key digital financial service indicators, including Cash In, Cash Out, Peer-to-Peer (P2P) transaction amounts, P2P transaction counts, and Agent Cash-In volumes.
 
-The interactive dashboard provides a consolidated view of fuel price levels and revision dynamics to support historical monitoring, comparative analysis, and data-driven economic research.
+Using Excel, MySQL, and Power BI, the project explores monthly transaction trends, liquidity movements, and agent-channel activity to generate data-driven insights into Bangladesh's evolving digital payments ecosystem.
 
-## 2. Business Context & Problem Statement
+The final deliverable is an interactive Power BI dashboard designed to support trend monitoring, comparative analysis, and business decision-making.
+
+## 🎯 2. Business Context & Problem Statement
 
 ### Business Context
 
-Fuel prices influence transportation costs, logistics operations, agricultural activities, power generation, and broader economic conditions in Bangladesh. Tracking government price revisions helps analysts and businesses understand how regulated fuel prices change over time.
+Mobile Financial Services have become an important part of Bangladesh's digital financial ecosystem. MFS operators, financial institutions, agents, and regulators monitor transaction flows to understand customer activity, cash circulation, and the role of agent networks in digital financial inclusion.
 
-### Business Problem
+### Business Problems
 
-Historical fuel price information and revision notices can be difficult to compare across multiple dates and fuel categories without a centralized analytical view.
+**1. Limited Visibility into Liquidity Trends**
 
-This project addresses three key challenges:
+Tracking Cash In and Cash Out across monthly periods can be challenging without a consolidated view of transaction inflows and outflows.
 
-- **Limited price visibility:** Difficulty comparing current and historical prices across fuel types.
-- **Revision tracking:** Difficulty identifying whether prices increased, decreased, remained unchanged, or represented a first observation.
-- **Revision verification:** Need for a structured comparison of before-and-after prices against official notices.
+**2. Lack of Centralized P2P Transaction Monitoring**
+
+Transaction amounts and transaction counts need to be analyzed together to understand changes in digital transfer activity and transaction velocity.
+
+**3. Fragmented Agent Channel Analysis**
+
+Agent Cash-In activity needs to be evaluated alongside overall Cash In trends to understand the contribution of agent-based transactions.
 
 ### Project Objectives
 
-- Track the latest reported prices per litre for four fuel categories.
-- Classify observations by price revision status.
-- Analyze historical and monthly price movements.
-- Compare before-and-after prices for individual revisions.
-- Develop an interactive Power BI dashboard for fuel price monitoring.
+- Analyze monthly Cash In and Cash Out trends.
+- Compare P2P transaction amounts and transaction counts.
+- Evaluate monthly and year-based transaction patterns.
+- Examine Agent Cash-In activity.
+- Develop an interactive dashboard for monitoring key performance indicators.
+- Translate analytical findings into actionable business recommendations.
 
-## 3. Dataset Overview
+## 📂 3. Dataset Overview
 
-The dataset contains 116 monthly fuel price observations covering June 2024 to October 2026.
+**Source:** Bangladesh Bank  
+**Analysis Period:** August 2025 – July 2026
 
-### Key Variables
+The analysis uses MFS operational statistics covering the following indicators:
 
-| Variable | Description |
+| Metric | Description |
 |---|---|
-| Fuel_Type | Fuel category |
-| Price_BDT_Per_Litre | Recorded price per litre in BDT |
-| Before_Price | Price before a revision |
-| After_Price | Price after a revision |
-| Price_Change_BDT | Difference between before and after prices |
-| Price_Status | Revision classification |
-| Year | Calendar year |
-| Quarter | Calendar quarter |
-| Month | Month of observation |
-| Day | Day associated with the record |
-| Source | Source reference for the observation |
+| Cash In | Value of cash deposited into MFS accounts |
+| Cash Out | Value of cash withdrawn through MFS channels |
+| P2P Amount | Total value of person-to-person transfers |
+| P2P Transaction Count | Number of P2P transactions |
+| Agent Cash-In | Cash-in activity associated with agent channels |
 
-### Fuel Categories
+The dataset was used to examine monthly movements, transaction volumes, and relationships between different MFS activity indicators.
 
-- Octane
-- Petrol
-- Kerosene
-- Diesel
+> **Data note:** Exact dataset links, units, and reporting-period definitions should be documented and verified before publication.
 
-### Data Source
-
-The analysis uses government fuel price publications and official notices, with Bangladesh Bank not being the primary source for regulated fuel prices.
-
-For reproducibility, the repository should include links to the relevant official fuel price announcements and the Energy and Mineral Resources Division (EMRD) publications used in the analysis.
-
-## 4. Tools & Technologies
+## 🛠️ 4. Tools & Technologies
 
 - **Microsoft Excel:** Initial data inspection and preparation.
-- **Power Query:** Data cleaning, transformation, date standardization, and conditional logic.
-- **Power BI:** Interactive reporting and visualization.
-- **DAX:** Dynamic measures and KPI calculations.
-- **Data Modeling:** Organizing fuel price observations for time-based and category-level analysis.
+- **MySQL:** Data querying, aggregation, and analytical calculations.
+- **Power Query:** Data cleaning, transformation, and ETL.
+- **Power BI:** Interactive dashboard development and visualization.
+- **DAX:** Measures, KPIs, and dynamic calculations.
+- **Date Table & Slicers:** Time-based filtering and period comparisons.
 
-## 5. Data Cleaning & Processing Workflow
+Only tools and techniques actually used in the project should be included in the final published version.
+
+## 🔄 5. Project Workflow
 
 ### Step 1: Data Collection
-Collected historical fuel price observations and relevant government revision information.
+Collected MFS operational statistics from Bangladesh Bank for the selected analysis period.
 
-### Step 2: Data Inspection
-Reviewed fuel categories, date fields, price values, and source references for inconsistencies.
+### Step 2: Data Cleaning
+Inspected the source data for missing values, inconsistent formats, duplicate records, and date-related issues.
 
-### Step 3: Data Cleaning
-Standardized date and numeric formats, reviewed missing values, and checked the consistency of fuel category labels.
+### Step 3: Data Transformation
+Prepared the dataset for analysis using Excel and Power Query, including date formatting and metric standardization where required.
 
-### Step 4: Price Change Calculation
-Calculated the difference between before-and-after prices.
+### Step 4: SQL Analysis
+Used MySQL to query and aggregate transaction indicators and investigate monthly trends.
 
-**Price Change = After Price − Before Price**
+### Step 5: Data Modeling
+Organized the analytical data and date dimensions to support time-based reporting.
 
-### Step 5: Price Status Classification
-Classified records into four categories:
+### Step 6: DAX Measures
+Developed measures for key transaction indicators and dynamic dashboard calculations.
 
-- **Increased:** After price is greater than before price.
-- **Decreased:** After price is lower than before price.
-- **Unchanged:** After price equals before price.
-- **First Observation:** No previous comparable price exists.
+### Step 7: Dashboard Development
+Created interactive Power BI visualizations for transaction trends, liquidity indicators, P2P activity, and agent-channel performance.
 
-### Step 6: Dashboard Development
-Built interactive Power BI visuals to compare fuel prices, monitor revision status, and analyze changes over time.
+### Step 8: Business Insights
+Interpreted the observed patterns and identified areas for further monitoring and investigation.
 
-### Step 7: Validation
-Compared recorded before-and-after prices against the corresponding official notices where available.
+## 📊 6. Key Metrics & Reported Findings
 
-## 6. Key Findings & Metrics
+The following figures are preliminary results supplied in the project analysis and should be reconciled with the underlying dataset before publication.
 
-The following figures are reported by the project analysis and should be reconciled with the underlying dataset before publication.
-
-### Latest Reported Fuel Prices
-
-| Fuel Type | Price per Litre (BDT) |
+| Metric | Reported Result |
 |---|---:|
-| Octane | ৳165.00 |
-| Petrol | ৳160.00 |
-| Kerosene | ৳155.00 |
-| Diesel | ৳135.00 |
+| Cash In | ৳3.79M million |
+| Cash Out | ৳3.56M million |
+| P2P Transacted Amount | ৳4.22M million |
+| P2P Transaction Count | Reported milestone of 1 billion transactions |
+| Agent Cash-In | More than ৳3.0M million |
+| P2P Transactions — February 2026 | 131 million |
+| P2P Transactions — March 2026 | 203 million |
 
-**Reported overall historical average:** ৳120.29 per litre across the 116 observations.
+**Important:** The Cash In and Cash Out figures were described as 2026 YTD aggregates, with separate 2025-period figures of ৳2.08M million and ৳1.85M million, respectively. Confirm the exact date coverage and units before treating these as directly comparable annual totals.
 
-*The latest prices are reported as of October 2026 and should be verified against the applicable official price notice.*
+## 💡 7. Key Findings & Business Insights
 
-### Price Revision Status Distribution
+### 1. P2P Transaction Activity Increased in March 2026
 
-| Price Status | Records | Percentage |
-|---|---:|---:|
-| Unchanged | 63 | 54.31% |
-| Decreased | 27 | 23.28% |
-| Increased | 22 | 18.97% |
-| First Observation | 4 | 3.45% |
-| **Total** | **116** | **100.01%*** |
+Reported P2P transaction counts declined to 131 million in February 2026 before reaching 203 million in March 2026.
 
-*Percentages may total 100.01% due to rounding.*
+**Business implication:** Monitoring monthly transaction counts can help identify periods of increased transfer activity. Additional data would be required to establish whether seasonal or festival-related factors caused the increase.
 
-### Key Insights
+### 2. Cash In and Cash Out Showed Substantial Transaction Activity
 
-**1. Unchanged Prices Were the Largest Category**
+The reported Cash In and Cash Out aggregates were of similar magnitude.
 
-Of the 116 records, 63 were classified as unchanged, representing approximately 54.31% of the dataset.
+**Business implication:** Monitoring both indicators together can help stakeholders understand transaction flows and investigate changes in cash circulation. Similar aggregate values alone do not establish that liquidity was balanced.
 
-**Business implication:** Historical monitoring should distinguish stable-price observations from actual revision events.
+### 3. Agent Channels Represent an Important Area of Analysis
 
-**2. Price Decreases Exceeded Price Increases in the Dataset**
+The reported Agent Cash-In amount exceeded ৳3.0M million.
 
-The analysis recorded 27 decreases and 22 increases.
+**Business implication:** Agent-channel monitoring can help identify changes in cash-in activity and inform further investigation into agent network utilization.
 
-**Business implication:** Comparing the magnitude and timing of changes is more informative than counting revision directions alone.
+## 📈 8. Dashboard Features
 
-**3. Fuel Prices Differed by Category**
+The Power BI report is intended to provide:
 
-Octane had the highest reported latest price at ৳165 per litre, while Diesel had the lowest at ৳135 per litre.
+- KPI cards for major transaction indicators.
+- Monthly Cash In and Cash Out trend comparisons.
+- P2P transaction amount and count analysis.
+- Agent Cash-In monitoring.
+- Date-based filtering and period comparisons.
+- Interactive visual exploration of transaction patterns.
 
-**Business implication:** Separate category-level tracking helps analysts compare regulated price levels across different fuel types.
+**Dashboard Preview:**  
+Add your Power BI dashboard screenshot here.
 
-**4. Monthly Trends Require Contextual Interpretation**
+Example Markdown syntax:
 
-The analysis reports notable variation during June–October.
+`![Power BI Dashboard](screenshots/mfs-dashboard.png)`
 
-**Business implication:** Monthly movements should be examined alongside official revision dates and relevant external factors. The observed trend alone does not establish that global crude prices or domestic policy changes caused the variation.
+Replace the image path with the actual location and filename of your dashboard screenshot in the repository.
 
-## 7. Power BI Dashboard Features
+## 🎯 9. Business Recommendations
 
-### Dashboard Page 1: Bangladesh Fuel Price Overview
+1. **Monitor monthly transaction trends:** Identify unusual changes in Cash In, Cash Out, and P2P activity for further investigation.
+2. **Investigate transaction spikes:** Compare high-activity periods with historical patterns and relevant calendar events before attributing causes.
+3. **Track agent-channel activity:** Examine Agent Cash-In trends to better understand changes in agent-based cash deposits.
+4. **Improve reporting consistency:** Standardize units, date definitions, and metric calculations across analytical reports.
+5. **Support data-driven decisions:** Use interactive dashboards to make transaction patterns easier to explore and communicate.
 
-Provides a high-level summary of fuel price levels and historical movements.
+These recommendations are analytical proposals rather than evidence of operational changes already implemented.
 
-**Key visuals:**
-- KPI cards for major fuel price indicators.
-- Latest reported price comparison across four fuel categories.
-- Monthly fuel price trend chart.
-- Time-based filtering by year, quarter, and month.
-- Fuel category comparisons.
+## 📁 10. Repository Structure
 
-### Dashboard Page 2: Fuel Price Changes & Revision Analysis
-
-Focuses on price revision patterns and data verification.
-
-**Key visuals:**
-- Donut chart showing revision status distribution.
-- Trend chart of price changes in BDT per litre.
-- Before-and-after price comparisons.
-- Fuel category and time-based filtering.
-- Revision-level comparison against official notices.
-
-## 8. Dashboard Preview
-
-Add screenshots of your completed Power BI dashboard to the repository.
-
-Example Markdown:
-
-![Bangladesh Fuel Price Overview Dashboard](screenshots/fuel-price-overview.png)
-
-![Fuel Price Revision Analysis Dashboard](screenshots/fuel-price-revision-analysis.png)
-
-Replace the example image paths with the actual filenames uploaded to your `screenshots/` folder.
-
-## 9. Business Recommendations
-
-1. **Maintain a revision history:** Preserve official notices, effective dates, and before-and-after prices for auditability.
-2. **Monitor fuel categories separately:** Track price movements by fuel type to support more detailed comparisons.
-3. **Investigate major changes:** Flag unusually large price movements for additional review against official publications.
-4. **Standardize data validation:** Check dates, units, and price calculations before publishing dashboard updates.
-5. **Support operational planning:** Use historical price trends as one input into transport and logistics budgeting, while recognizing that fuel prices alone do not determine total operating costs.
-
-These are analytical recommendations, not evidence that specific operational changes have already been implemented.
-
-## 10. Repository Structure
-
-Suggested GitHub repository layout:
+The repository can be organized as follows:
 
 ```text
-bangladesh-fuel-price-analysis/
+bangladesh-digital-payments-mfs-analytics/
 │
 ├── README.md
 ├── data/
-│   └── fuel-price-data.csv
-├── power-query/
-│   └── transformation-notes.md
+│   └── sample_or_cleaned_data.csv
+├── sql/
+│   └── analysis_queries.sql
 ├── power-bi/
-│   └── fuel-price-dashboard.pbix
+│   └── mfs-analytics-dashboard.pbix
 ├── screenshots/
-│   ├── fuel-price-overview.png
-│   └── fuel-price-revision-analysis.png
+│   └── mfs-dashboard.png
 └── docs/
     └── methodology.md
 ```
 
-The filenames are examples. Include only files that actually exist in your project, and share datasets only when redistribution is permitted.
+The filenames above are examples. Keep only the folders and files that actually exist in your project, and avoid uploading restricted or confidential data.
 
-## 11. Limitations & Data Quality Notes
+## ⚠️ 11. Data Limitations
 
-- Findings depend on the accuracy and completeness of the source observations.
-- First-observation records do not have a comparable previous price.
-- Historical averages may be affected by the number of observations per fuel category and reporting period.
-- Monthly price patterns do not independently establish causation.
-- Latest reported prices and effective dates should be validated against official notices before publication.
+- The findings depend on the completeness and consistency of the available source data.
+- Reporting units and date coverage must be verified before comparing aggregate values.
+- Observed monthly changes do not independently establish their underlying causes.
+- The analysis does not establish causal relationships between transaction activity and financial inclusion.
+- Any conclusions should be interpreted within the scope of the available indicators.
 
-## 12. Author
+## 👩‍💻 12. Author
 
 **Sharmin Akter**  
-Junior Data Analyst | Excel | Power Query | Power BI | DAX
+Junior Data Analyst | Excel | SQL | Power BI
 
-This project demonstrates data preparation, historical trend analysis, price revision classification, and interactive business intelligence reporting.
+This project demonstrates an analytical workflow for exploring digital payment activity and communicating business insights through data visualization.
 
 ---
 
-*Portfolio project for educational and analytical purposes. Source references and reported metrics should be verified against the original publications before use in formal research or business decisions.*
+*For educational and portfolio purposes. Source attribution and metric definitions should be verified against the original Bangladesh Bank publications.*
